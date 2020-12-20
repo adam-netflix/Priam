@@ -33,6 +33,7 @@ public class FakeConfiguration implements IConfiguration {
     public Map<String, Object> fakeConfig;
     private boolean mayCreateNewToken;
     private ImmutableList<String> racs;
+    private boolean usePrivateIp;
 
     public Map<String, String> fakeProperties = new HashMap<>();
 
@@ -207,5 +208,14 @@ public class FakeConfiguration implements IConfiguration {
 
     public void setCreateNewToken(boolean mayCreateNewToken) {
         this.mayCreateNewToken = mayCreateNewToken;
+    }
+
+    @Override
+    public boolean usePrivateIP() {
+        return usePrivateIp;
+    }
+
+    public void usePrivateIP(boolean usePrivateIp) {
+        this.usePrivateIp = usePrivateIp;
     }
 }
